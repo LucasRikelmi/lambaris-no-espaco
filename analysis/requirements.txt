@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+mne            # only for 01_metricas_sono.py (Sleep-EDF hypnograms)
+fastapi        # only for the optional demo API
+uvicorn
+qdrant-client  # only for 05_ingerir_conhecimento.py
+fastembed
+pypdf
+beautifulsoup4

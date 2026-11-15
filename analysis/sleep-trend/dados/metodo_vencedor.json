@@ -1,0 +1,32 @@
+{
+  "metodo_vencedor": "cusum",
+  "resumo": [
+    {
+      "metodo": "cusum",
+      "taxa_deteccao_pct": 82.0,
+      "atraso_medio_dias": 4.15,
+      "atraso_mediano_dias": 4.0,
+      "taxa_falso_alarme_pct": 14.0,
+      "total_falsos_alarmes": 37,
+      "score": 63.85
+    },
+    {
+      "metodo": "limiar_fixo",
+      "taxa_deteccao_pct": 74.0,
+      "atraso_medio_dias": 3.65,
+      "atraso_mediano_dias": 3.0,
+      "taxa_falso_alarme_pct": 8.0,
+      "total_falsos_alarmes": 10,
+      "score": 62.35
+    },
+    {
+      "metodo": "ewma",
+      "taxa_deteccao_pct": 70.0,
+      "atraso_medio_dias": 4.06,
+      "atraso_mediano_dias": 4.0,
+      "taxa_falso_alarme_pct": 10.0,
+      "total_falsos_alarmes": 20,
+      "score": 55.94
+    }
+  ]
+}

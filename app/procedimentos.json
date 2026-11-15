@@ -1,0 +1,5 @@
+[
+  {"id":1,"titulo":"Revisar evento simulado","texto":"Abra a linha do tempo, confira quais sinais mudaram e identifique a regra que gerou o evento."},
+  {"id":2,"titulo":"Verificar falha de coleta","texto":"Confira o indicador de contato do eletrodo e o horário da última leitura. Registre a indisponibilidade do sensor no exercício."},
+  {"id":3,"titulo":"Registrar revisão","texto":"Inclua o cenário, a evidência observada e a ação realizada no relatório de simulação."}
+]

@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*
+   * Paleta Lambaris (fonte única de cor). Componentes usam só os tokens
+   * semânticos abaixo; nada de hex solto no código.
+   *
+   *   --brand-marinho   #18246E  texto principal
+   *   --brand-petroleo  #184A6E  informação (não é alerta)
+   *   --brand-indigo    #465193  texto de apoio
+   *   --brand-lavanda   #7D81AA  borda de campo (3,75:1 sobre branco). NÃO usar em texto.
+   *   --brand-azulclaro #4EA0FE  primário no tema escuro. NÃO usar em texto no claro (2,7:1).
+   *   --brand-vibrante  #1569D9  primário: botões, links, foco
+   *   --brand-lilas     #DEDEFB  secundário/superfícies (cartões internos, abas, campos) e hover
+   *   --brand-fundo     #F6F6F6  fundo
+   *
+   * Status (ok/warn/crit) ficam FORA da paleta azul de propósito: o semáforo
+   * de saúde precisa de verde/âmbar/vermelho distintos entre si e do azul.
+   * Valores escurecidos para passar AA (>=4,5:1) como texto no fundo claro.
+   */
+  :root {
+    --brand-marinho: 232 64% 26%;
+    --brand-petroleo: 205 64% 26%;
+    --brand-indigo: 231 35% 43%;
+    --brand-lavanda: 235 21% 58%;
+    --brand-azulclaro: 212 99% 65%;
+    --brand-vibrante: 214 82% 47%;
+    --brand-lilas: 240 78% 93%;
+    --brand-fundo: 0 0% 96%;
+
+    --background: var(--brand-fundo);
+    --foreground: var(--brand-marinho);
+
+    --card: 0 0% 100%;
+    --card-foreground: var(--brand-marinho);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--brand-marinho);
+
+    --primary: var(--brand-vibrante);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--brand-lilas);
+    --secondary-foreground: var(--brand-marinho);
+
+    --muted: var(--brand-lilas);
+    --muted-foreground: var(--brand-indigo);
+
+    --accent: var(--brand-lilas);
+    --accent-foreground: var(--brand-marinho);
+
+    --destructive: 352 75% 42%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 235 20% 87%;
+    --input: var(--brand-lavanda);
+    --ring: var(--brand-vibrante);
+
+    --ok: 152 70% 27%;
+    --ok-foreground: 0 0% 100%;
+    --warn: 35 100% 30%;
+    --warn-foreground: 0 0% 100%;
+    --info: var(--brand-petroleo);
+    --info-foreground: 0 0% 100%;
+    --crit: 352 75% 42%;
+    --crit-foreground: 0 0% 100%;
+
+    --radius: 0.75rem;
+  }
+
+  /* Tema escuro: hoje nenhum código aplica a classe .dark; mantido coerente. */
+  .dark {
+    --background: 232 55% 10%;
+    --foreground: var(--brand-lilas);
+
+    --card: 232 50% 14%;
+    --card-foreground: var(--brand-lilas);
+
+    --popover: 232 50% 14%;
+    --popover-foreground: var(--brand-lilas);
+
+    --primary: var(--brand-azulclaro);
+    --primary-foreground: 232 55% 10%;
+
+    --secondary: var(--brand-indigo);
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 232 40% 20%;
+    --muted-foreground: 232 20% 72%;
+
+    --accent: 232 40% 22%;
+    --accent-foreground: var(--brand-lilas);
+
+    --destructive: 352 85% 68%;
+    --destructive-foreground: 232 55% 10%;
+
+    --border: 232 30% 26%;
+    --input: var(--brand-lavanda);
+    --ring: var(--brand-azulclaro);
+
+    --ok: 152 55% 50%;
+    --ok-foreground: 152 45% 8%;
+    --warn: 40 95% 58%;
+    --warn-foreground: 40 70% 10%;
+    --info: var(--brand-azulclaro);
+    --info-foreground: 232 55% 10%;
+    --crit: 352 85% 68%;
+    --crit-foreground: 352 55% 10%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 999px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

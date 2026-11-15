@@ -1,0 +1,22 @@
+# secrets
+.env
+*.env
+!.env.example
+# dependencies and builds
+node_modules/
+web/dist/
+web/dist-artifact/
+*.tsbuildinfo
+.venv/
+venv/
+__pycache__/
+# models, vector stores, local databases, raw downloads
+models/
+qdrant_storage/
+*.gguf
+*.safetensors
+*.onnx
+*.db
+sleep-cassette/
+*.edf
+.screenshots/
