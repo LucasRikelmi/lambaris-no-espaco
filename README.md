@@ -106,6 +106,55 @@ Only derived summaries of the non-NASA datasets are included; the raw files are 
 - The sleep series used in the trend demo (`serie_marina.csv`, `sono_simulado_demo.csv`), including the injected drop.
 - The procedures in `procedimentos.json` and the manual codes (`MED-*`, `AMB-*`, `TEC-*`). They are fictional; real mission medical procedures are not public.
 
+### Space Agency Partner & Other Data
+
+All non-NASA data, models, code, tools and fonts used to build the project. All links are public.
+
+**Data and references**
+
+| Resource | URL |
+|---|---|
+| MMASH: Multilevel Monitoring of Activity and Sleep in Healthy People (PhysioNet) | https://physionet.org/content/mmash/1.0.0/ |
+| BIG IDEAs Lab Glycemic Variability and Wearable Device Data (PhysioNet, Dexcom) | https://physionet.org/content/big-ideas-glycemic-wearable/1.1.2/ |
+| OpenNeuro ds004902: sleep deprivation, PVT, KSS, PANAS | https://openneuro.org/datasets/ds004902/versions/1.0.8 |
+| Sleep-EDF Database Expanded (PhysioNet) | https://physionet.org/content/sleep-edfx/1.0.0/ |
+| CSA Bio-Monitor (Canadian Space Agency, reference) | https://www.asc-csa.gc.ca/eng/sciences/bio-monitor.asp |
+| AHA/ILCOR Adult Basic Life Support guidelines (reference) | https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support |
+| StatPearls: normal adult vital signs (reference) | https://www.ncbi.nlm.nih.gov/books/NBK593192/ |
+
+**AI models**
+
+| Resource | URL |
+|---|---|
+| MedGemma-GRPO GGUF (mradermacher, Q4_K_S) | https://huggingface.co/mradermacher/MedGemma-GRPO-GGUF |
+| MedGemma 4B (Google) | https://huggingface.co/google/medgemma-4b-it |
+| Gemma 3 4B (Google) | https://huggingface.co/google/gemma-3-4b-it |
+| nomic-embed-text (Ollama) | https://ollama.com/library/nomic-embed-text |
+| paraphrase-multilingual-MiniLM-L12-v2 ONNX (Qdrant/FastEmbed) | https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q |
+| Kokoro-82M TTS model | https://huggingface.co/hexgrad/Kokoro-82M |
+| Piper voice en_US-lessac-medium | https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium |
+| Claude (Anthropic), AI coding and writing assistant | https://www.anthropic.com/claude |
+
+**Tools and services**
+
+| Resource | URL |
+|---|---|
+| Ollama | https://github.com/ollama/ollama |
+| Qdrant | https://github.com/qdrant/qdrant |
+| Kokoro-FastAPI | https://github.com/remsky/Kokoro-FastAPI |
+| Piper TTS | https://github.com/rhasspy/piper |
+| FFmpeg | https://ffmpeg.org/ |
+| Figma (UI prototype) | https://www.figma.com/ |
+| Docker | https://www.docker.com/ |
+| Python | https://www.python.org/ |
+| Noto Sans font (video) | https://fonts.google.com/noto/specimen/Noto+Sans |
+
+**Python libraries:** [NumPy](https://numpy.org/), [pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), [MNE-Python](https://mne.tools/), [FastAPI](https://fastapi.tiangolo.com/), [Uvicorn](https://github.com/encode/uvicorn), [qdrant-client](https://github.com/qdrant/qdrant-client), [FastEmbed](https://github.com/qdrant/fastembed), [pypdf](https://pypdf.readthedocs.io/), [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/), [Pillow](https://python-pillow.org/).
+
+**JavaScript libraries:** [React](https://react.dev/), [Vite](https://vite.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/), [Radix UI](https://www.radix-ui.com/), [Lucide](https://lucide.dev/), [vite-plugin-singlefile](https://github.com/richardtallent/vite-plugin-singlefile).
+
+No copyrighted material is used without permission. Screenshots and charts are our own.
+
 ## 6. Results so far
 
 - The simulated scenarios fire the expected rule within the configured persistence time, and the loose-sensor scenario suppresses the cardiac rule instead of alarming.
@@ -131,10 +180,13 @@ Only derived summaries of the non-NASA datasets are included; the raw files are 
 4. Measure the false-alarm rate on real multi-week data.
 5. Test the AI assistant on embedded hardware, fully offline.
 
-## 9. Use of AI tools
+## 9. Use of AI
 
-- **In the product:** Gemma 3 4B and MedGemma 4B (via Ollama) for event explanation in Portuguese, nomic-embed-text for retrieval, Kokoro for speech. These are optional and never sit in the alarm path.
-- **In the development:** the team used AI assistants (Anthropic's Claude) to help write and review code, review the data pipelines and statistics, translate, and draft documentation including this README. All AI-assisted output was reviewed by the team. No AI-generated images are presented as NASA imagery.
+- **Code:** parts of the app and analysis code were written or reviewed with an AI assistant ([Claude](https://www.anthropic.com/claude), Anthropic). The team reviewed and tested the result.
+- **Text:** parts of this README, the data notes, the English translation and the video subtitles were drafted with the same AI assistant and edited by the team.
+- **Voice:** the narration of the demo video is AI-generated synthetic speech ([Piper TTS](https://github.com/rhasspy/piper), voice `en_US-lessac-medium`). The in-app narration uses Kokoro TTS. This is also stated in the video.
+- **In the product:** Gemma 3 4B and MedGemma 4B (via Ollama) explain events, nomic-embed-text powers retrieval; the team also evaluated the community model MedGemma-GRPO GGUF (Q4_K_S). These are optional and never sit in the alarm path.
+- **Images:** screenshots are captures of our own prototype; charts were generated by our code with matplotlib. No AI-generated images are used, and nothing is presented as NASA imagery.
 
 ## 10. Team
 
